@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "A Rajkumar",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 38.53,
+      "left": -197.21,
+      "attrs": {}
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 50.42, "left": 135.12, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "ldr1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "ldr1:VCC", "esp:VIN", "red", [ "h0" ] ],
+    [ "ldr1:AO", "esp:VP", "green", [ "h0" ] ],
+    [ "servo1:PWM", "esp:D13", "green", [ "h-9.34", "v86.48", "h-154.07", "v-71.77" ] ],
+    [ "servo1:V+", "esp:3V3", "green", [ "h0" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
